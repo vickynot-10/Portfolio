@@ -1,0 +1,117 @@
+    #navbar-container {
+        width: 100%;
+        min-height: 20dvh;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        top: 0;
+        left: 0;
+        flex-direction: row;
+    }
+    
+    #navbar-container a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    #navlinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 0 10px;
+        width: 60%;
+        align-items: center;
+    }
+    
+    #resume-btn {
+        height: 50px;
+        width: 90px;
+        cursor: pointer;
+        margin: auto 0;
+        border: 1px solid white;
+        background-color: transparent;
+        color: white;
+    }
+    
+    .active {
+        position: relative;
+        top: 0%;
+        left: 0%;
+    }
+    
+    .active::before {
+        content: ' ';
+        height: 2px;
+        width: 5px;
+        background-color: rgba(255, 255, 255, 0.8);
+        position: absolute;
+        bottom: -55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: WidthLine 0.3s forwards linear;
+    }
+    
+    @keyframes WidthLine {
+        0% {
+            width: 5px;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    
+    .mobile-menu-icon {
+        display: none;
+    }
+    
+    @media screen and (min-width:320px) and (max-width:640px) {
+        #navlinks {
+            display: none;
+        }
+        #navbar-container {
+            width: 100%;
+            display: block;
+        }
+        .mobile-menu-icon {
+            display: block;
+            background-color: transparent;
+            border: unset;
+        }
+        #navlinks-mobile {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            position: absolute;
+            top: -100%;
+            left: 0%;
+            align-items: center;
+            width: 100%;
+            z-index: 10;
+            min-height: 60dvh;
+            height: auto;
+            max-height: 70dvh;
+            background-color: #6A1F9F;
+            animation: slideDown 0.3s ease-in-out forwards;
+        }
+        @keyframes slideDown {
+            0% {
+                top: -100;
+                left: 0%;
+            }
+            100% {
+                top: 0%;
+                left: 0%;
+            }
+        }
+        .mobile-menu-icon img {
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            z-index: 20;
+            top: 25%;
+            left: 90%;
+        }
+        #resume-btn {
+            margin: unset;
+        }
+    }

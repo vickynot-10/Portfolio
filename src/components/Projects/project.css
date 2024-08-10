@@ -1,0 +1,102 @@
+#project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#project-p {
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#project-p::before {
+    content: ' ';
+    height: 2px;
+    width: 12px;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    bottom: -25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#project-section {
+    margin-top: 4px;
+    min-height: 30dvh;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 65%;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#project-title {
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: auto 0;
+}
+
+#project-desc {
+    text-align: left;
+    color: rgba(255, 255, 255, 0.6);
+    word-wrap: break-word;
+    line-height: 30px;
+}
+
+#project-link {
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+}
+
+#link-a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#project-texts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10px;
+}
+
+#project-logo {
+    width: 100px;
+    margin-left: 5px;
+}
+
+@media screen and (min-width:320px) and (max-width:640px) {
+    #project-section {
+        margin-top: 4px;
+        min-height: 50dvh;
+        height: auto;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        min-width: 80%;
+        width: auto;
+        max-width: 85%;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid black;
+    }
+    #project-desc {
+        text-align: left;
+        color: rgba(255, 255, 255, 0.6);
+        word-wrap: break-word;
+        line-height: 30px;
+    }
+}

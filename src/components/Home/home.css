@@ -1,0 +1,61 @@
+body {
+    background-color: #4F1787;
+}
+
+#container {
+    width: 100%;
+    min-height: 70dvh;
+    max-height: 80dvh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#My-name {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin: 5px;
+    font-size: 20px;
+}
+
+#name {
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 7px;
+}
+
+#desc {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    margin-top: 8px;
+}
+
+#container button {
+    color: white;
+    margin-top: 8px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #4F1787;
+    border: 1px solid white;
+    padding: 2px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width:320px) and (max-width:640px) {
+    #container {
+        width: 100%;
+        min-height: 30dvh;
+        max-height: 60dvh;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
