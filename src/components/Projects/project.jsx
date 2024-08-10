@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import { assestObj } from "../../assests/assest";
 import './project.css'
-export function Project(){
+import { useEffect } from "react";
+export function Project( {setNav} ){
+    useEffect(()=>{
+        setNav("projects");
+        console.log("in proj section")
+    })
     let projectDetails=[
         {
             image:assestObj.skullcandyLogo,

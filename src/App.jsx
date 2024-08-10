@@ -22,8 +22,8 @@ export function App(){
     <Routes key={location.key} location={location} >   
       <Route path="/" element={<HomePage setNav={setNav} />} />
       <Route path="/about" element={<About setNav={setNav} />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/projects" element={<Project />} />
+      <Route path="/contact" element={<Contact setNav={setNav} />} />
+      <Route path="/projects" element={<Project setNav={setNav} />} />
     </Routes>
     </AnimatePresence>    
     </>
