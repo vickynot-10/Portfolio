@@ -9,7 +9,7 @@ import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
 export function App(){
-  let [nav,setNav] = useState("home");
+  let [nav,setNav] = useState("/");
   let location =useLocation()
   return(
     <>
