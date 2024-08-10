@@ -10,7 +10,7 @@ export function NavBar( {nav,setNav} ){
            
         <div id={isMobile?'navlinks-mobile':'navlinks'}>
         
-        <p onClick={ ()=>setNav("/")  }  >
+        <p onClick={ ()=>setNav("home")  }  >
              <Link to="/" className={nav==='home'?"active":" "}>Home</Link>
         </p>
         <p onClick={ ()=>setNav("about")  } >
