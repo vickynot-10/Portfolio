@@ -6,6 +6,10 @@
     flex-direction: column;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 #about-me {
     color: rgba(255, 255, 255, 1);
     text-align: center;

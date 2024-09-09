@@ -16,7 +16,8 @@ export function App(){
     <NavBar nav={nav} setNav={setNav} />
     <AnimatePresence 
     onExitComplete={()=>{
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = 'hidden';
+
     }}
     > 
     <Routes key={location.key} location={location} >   
