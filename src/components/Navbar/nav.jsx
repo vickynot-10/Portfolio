@@ -3,7 +3,11 @@ import './nav.css';
 import { assestObj } from "../../assests/assest";
 import { useState } from "react";
 import { motion } from "framer-motion";
-export function NavBar( {nav,setNav} ){
+import { useNav } from "../../Contexts/navcontext";
+
+
+export function NavBar( ){
+    let {nav,setNav} =useNav();
     let [isMobile,setMobile]= useState(false);
     return(
     <div id="navbar-container" >
@@ -37,23 +41,29 @@ export function NavBar( {nav,setNav} ){
                 {
                     scale:1.5
                 }}>
-            {isMobile ? <motion.img
-             whileTap={
-                {
-                    rotate:'-360deg',transition:{
-                        ease:"easeInOut" 
-                    }
-                }
-            }
-            src={assestObj.Closemenu} alt="close" /> : <motion.img 
-            whileTap={
-                {
-                    rotate:'360deg',transition:{
-                        ease:"easeInOut"
-                    } 
-                }
-            }
-            src={assestObj.MenuOpen} alt="open" />  }
+            {isMobile ? (
+                    <motion.img
+                    src={assestObj.Closemenu} 
+                    alt="close"
+                    initial={{ rotate: 0 }}
+                    animate={{ rotate: 180 }}
+                    transition={{ rotate:-360,
+                        duration: 0.5, ease: "easeInOut" }}
+                    />
+                    ) : (
+                    <motion.img
+                    src={assestObj.MenuOpen} 
+                    alt="menu"
+                    initial={{ rotate: 0 }}
+                    animate={{ rotate: 0 }}
+                    whileTap={{
+                        rotate: 180,
+                        transition: { duration: 0.5, ease: "easeInOut" },
+                    }}
+                    />
+                )
+            
+             }
         </motion.button>     
  
     </div>

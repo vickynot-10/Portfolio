@@ -2,11 +2,12 @@ import { assestObj } from "../../assests/assest";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import './contact.css'
-export function Contact( {setNav} ){
+import { useNav } from "../../Contexts/navcontext";
+export function Contact(  ){
+    let {setNav} =useNav();
     useEffect(()=>{
         setNav("contact");
-        console.log("in contact section")
-    })
+    },[])
     return(
         <motion.div id="contact-container"
        

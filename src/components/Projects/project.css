@@ -42,13 +42,14 @@
 #project-title {
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
-    font-size: 20px;
+    font-size: clamp(12px,1vw,20px);
     text-align: center;
     text-transform: uppercase;
     margin: auto 0;
 }
 
 #project-desc {
+    font-size: clamp(10px,1vw,20px);
     text-align: left;
     color: rgba(255, 255, 255, 0.6);
     word-wrap: break-word;
@@ -62,6 +63,7 @@
 
 #link-a {
     color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(12px,1vw,20px);
     text-decoration: none;
     cursor: pointer;
 }
@@ -79,9 +81,16 @@
 }
 
 @media screen and (min-width:320px) and (max-width:640px) {
+    #project-logo {
+        width: 80px;
+        margin-left: 5px;
+    }
+    #project-img{
+        display: flex;
+        justify-content: flex-start;
+    }
     #project-section {
-        margin-top: 4px;
-        min-height: 50dvh;
+        margin-top: 10px;
         height: auto;
         overflow: hidden;
         display: flex;
