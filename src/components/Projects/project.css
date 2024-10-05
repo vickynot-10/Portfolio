@@ -96,8 +96,6 @@
         display: flex;
         flex-direction: row;
         min-width: 80%;
-        width: auto;
-        max-width: 85%;
         justify-content: space-around;
         align-items: center;
         border: 1px solid black;

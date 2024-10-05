@@ -10,6 +10,13 @@ export function Project( {isMobile} ){
     },[])
 
     let projectDetailsMobile=[
+        {
+            image: assestObj.FoodOrderLogo,
+            title:"Food Order",
+            desc:null,
+            link:"https://food-order-c58e.onrender.com/delivery",
+            linkName:"Food Order Server Live Link"
+        },
 
         {
             image:assestObj.skullcandyLogo,
@@ -36,6 +43,13 @@ export function Project( {isMobile} ){
     ]
 
     let projectDetails=[
+        {
+            image:  assestObj.FoodOrderLogo,
+            title:"Food Order",
+            desc:'This website features JWT-based user authentication for secure login and registration, a shopping page with cart management, and checkout functionality. Users can browse food options and placing orders. The application is built using the MERN stack, ensuring a responsive and seamless user experience.',
+            link:"https://food-order-c58e.onrender.com/delivery",
+            linkName:"Food Order Server Live Link"
+        },
         {
             image:assestObj.skullcandyLogo,
             title:"Simple Skullcandy Clone",

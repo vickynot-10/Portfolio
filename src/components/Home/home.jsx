@@ -94,10 +94,7 @@ export function HomePage(  ){
              <About isMobile={isMobile} /> 
             </div>
             
-            
-            :   
-
-
+            :  
 
         <motion.button
          whileHover={{

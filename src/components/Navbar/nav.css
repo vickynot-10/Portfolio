@@ -69,7 +69,8 @@
             display: none;
         }
         #navbar-container {
-            width: 100%;
+            width: 90%;
+            overflow: hidden;
             display: block;
         }
         .mobile-menu-icon {
@@ -91,6 +92,8 @@
             height: auto;
             max-height: 70dvh;
             background-color: #6A1F9F;
+            
+            overflow: hidden;
             animation: slideDown 0.3s ease-in-out forwards;
         }
         @keyframes slideDown {
@@ -109,8 +112,7 @@
             position: fixed;
             z-index: 20;
             top: 5%;
-            left: 90%;
-            transform: translate(-90%,-5%);
+            right: 15%;
         }
         #resume-btn {
             margin: unset;

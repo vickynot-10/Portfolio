@@ -8,10 +8,10 @@ import ATMlogo from './images/Project thumbnails/credit_card_24dp_FFFFFF_FILL0_w
 import WeatherLogo from './images/Project thumbnails/weather-news.png';
 import MenuOpen from './images/menu.png';
 import Closemenu from './images/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png'
-
+import FoodOrderLogo from './images/Project thumbnails/favicon.png';
 
 
 export const assestObj ={
     githublogo,mailLogo,CallLogo,LinkedInLogo,ResumePdf,skullcandyLogo,ATMlogo,WeatherLogo,
-    MenuOpen,Closemenu
+    MenuOpen,Closemenu,FoodOrderLogo
 }

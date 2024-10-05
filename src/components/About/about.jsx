@@ -5,10 +5,13 @@ import { motion } from 'framer-motion';
 import { useNav } from '../../Contexts/navcontext';
 import { useEffect } from 'react';
 export function About( {isMobile} ){
+
+
+
     let {setNav}=useNav();
 
     useEffect(()=>{
-        setNav("about")
+        setNav("about");
     },[])
 
 
@@ -57,7 +60,7 @@ export function About( {isMobile} ){
             </div>
             {
                 isMobile ? 
-                <><div style={{
+                <><div  ref={projectRef} style={{
                         margin: '15px 0'
                     }}>
                         <Project isMobile={isMobile} />
