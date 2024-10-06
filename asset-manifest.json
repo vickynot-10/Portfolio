@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.c89dfe13.css",
-    "main.js": "/Portfolio/static/js/main.9d8fe498.js",
+    "main.js": "/Portfolio/static/js/main.7346f0db.js",
     "static/js/453.11d7c25d.chunk.js": "/Portfolio/static/js/453.11d7c25d.chunk.js",
-    "static/media/Vignesh_MERN_dev.pdf": "/Portfolio/static/media/Vignesh_MERN_dev.0288a670e1a9a5fe65f0.pdf",
+    "static/media/Vignesh_MERN_dev.pdf": "/Portfolio/static/media/Vignesh_MERN_dev.4e13d98685a4af907910.pdf",
     "static/media/menu.png": "/Portfolio/static/media/menu.669e5c3a3afaf31a1b26.png",
     "static/media/weather-news.png": "/Portfolio/static/media/weather-news.a360313511ac39cffef1.png",
     "static/media/github.png": "/Portfolio/static/media/github.716cc3245c1f0a19b265.png",
     "index.html": "/Portfolio/index.html",
     "main.c89dfe13.css.map": "/Portfolio/static/css/main.c89dfe13.css.map",
-    "main.9d8fe498.js.map": "/Portfolio/static/js/main.9d8fe498.js.map",
+    "main.7346f0db.js.map": "/Portfolio/static/js/main.7346f0db.js.map",
     "453.11d7c25d.chunk.js.map": "/Portfolio/static/js/453.11d7c25d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c89dfe13.css",
-    "static/js/main.9d8fe498.js"
+    "static/js/main.7346f0db.js"
   ]
 }
