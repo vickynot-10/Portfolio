@@ -60,7 +60,7 @@ export function About( {isMobile} ){
             </div>
             {
                 isMobile ? 
-                <><div  ref={projectRef} style={{
+                <><div  style={{
                         margin: '15px 0'
                     }}>
                         <Project isMobile={isMobile} />
