@@ -99,7 +99,7 @@ const skills = [
   },
 ];
 
-const navItems = [
+const nav_items = [
   { label: "About", id: "about" },
   { label: "Skills", id: "skills" },
   { label: "Experience", id: "experience" },
@@ -177,8 +177,8 @@ export default function Home() {
             </p>
           </div>
 
-          <nav className="flex flex-col gap-1 my-8">
-            {navItems.map((item) => (
+          <nav className="flex flex-col  gap-3 my-8">
+            {nav_items.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
