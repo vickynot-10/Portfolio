@@ -69,6 +69,29 @@ body {
   border-radius: 2px;
 }
 
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(15 23 42);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(45, 212, 191, 0.4);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 212, 191, 0.7);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(45, 212, 191, 0.4) rgb(15 23 42);
+}
+
 @media screen and (max-width: 1024px) {
   .app-wrapper {
     width: 95%;
