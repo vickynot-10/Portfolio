@@ -14,6 +14,21 @@ export const metadata: Metadata = {
   title: "Vignesh | Software Engineer",
   description:
     "Full-stack developer specializing in React, Node.js, and real-time systems.",
+  keywords: [
+    "Vignesh",
+    "Software Engineer",
+    "Full Stack Developer",
+    "React",
+    "Next.js",
+    "Node.js",
+    "TypeScript",
+    "MongoDB",
+    "Socket.IO",
+    "Tamil Nadu",
+    "Madurai",
+  ],
+  authors: [{ name: "Vignesh", url: "https://github.com/vickynot-10" }],
+  creator: "Vignesh",
   icons: {
     icon: [
       {
@@ -28,6 +43,19 @@ export const metadata: Metadata = {
       },
     ],
     apple: [{ url: "/apple-touch-icon.png" }],
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://vickynot.vercel.app/",
+    title: "Vignesh | Software Engineer",
+    description:
+      "Full-stack developer specializing in React, Node.js, and real-time systems.",
+    siteName: "Vignesh Portfolio",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
