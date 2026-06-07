@@ -567,6 +567,24 @@ export default function Home() {
                 index={i}
               />
             ))}
+            <motion.div
+              custom={projects.length}
+              variants={fade_up}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="mt-4"
+            >
+              <Link
+                href="/projects"
+                className="group inline-flex items-center gap-2 text-slate-200 text-sm font-semibold hover:text-teal-300 transition-colors duration-200"
+              >
+                View full project archive
+                <span className="transition-transform duration-200 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+            </motion.div>
           </section>
         </div>
       </div>
