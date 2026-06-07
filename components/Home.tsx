@@ -181,14 +181,14 @@ function ProjectCard({
   index: number;
 }) {
   const [expanded, set_expanded] = useState(false);
-const [is_desktop, set_is_desktop] = useState(false);
+  const [is_desktop, set_is_desktop] = useState(false);
 
-useEffect(() => {
-  const check = () => set_is_desktop(window.innerWidth >= 640);
-  check();
-  window.addEventListener("resize", check);
-  return () => window.removeEventListener("resize", check);
-}, []);
+  useEffect(() => {
+    const check = () => set_is_desktop(window.innerWidth >= 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
   return (
     <motion.div
       custom={index}
@@ -220,22 +220,22 @@ useEffect(() => {
           )}
         </div>
         <ul className="space-y-2 mb-4 pr-1">
-  {item.desc.map((d, j) => (
-    <AnimatePresence key={j}>
-    {(j < 2 || expanded || is_desktop) && (
-        <motion.li
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="text-slate-400 text-sm leading-7 list-disc ml-4"
-        >
-          {d}
-        </motion.li>
-      )}
-    </AnimatePresence>
-  ))}
-</ul>
+          {item.desc.map((d, j) => (
+            <AnimatePresence key={j}>
+              {(j < 2 || expanded || is_desktop) && (
+                <motion.li
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                  className="text-slate-400 text-sm leading-7 list-disc ml-4"
+                >
+                  {d}
+                </motion.li>
+              )}
+            </AnimatePresence>
+          ))}
+        </ul>
         {item.desc.length > 2 && (
           <motion.button
             initial={{ opacity: 0 }}
