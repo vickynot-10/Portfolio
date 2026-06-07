@@ -24,7 +24,7 @@ export default function AppWrapper({
        <a
         href="/Vignesh-Resume.pdf"
         download="Vignesh-Resume.pdf"
-        className="fixed bottom-8 border-0 right-10 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-teal-400/10 text-slate-200 text-xl border border-teal-400/20 hover:bg-teal-400/30 hover:border-teal-400/50 transition-all duration-300 backdrop-blur-md shadow-lg shadow-teal-900/20"
+        className="fixed bottom-8  right-10 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-teal-400/10 text-slate-200 text-xl  border-0 border-teal-400/20 hover:bg-teal-400/30 hover:border-teal-400/50 transition-all duration-300 backdrop-blur-md shadow-lg shadow-teal-900/20"
         title="Download Resume"
       >
         <LuDownload />

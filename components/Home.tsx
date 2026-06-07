@@ -2,9 +2,43 @@
 
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
-import { LuExternalLink } from "react-icons/lu";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaWhatsapp,
+  FaNodeJs,
+  FaAngular,
+  FaReact,
+  FaGitAlt,
+  FaPython,
+} from "react-icons/fa";
+import {
+  SiGmail,
+  SiMongodb,
+  SiRedis,
+  SiSocketdotio,
+  SiTypescript,
+  SiJavascript,
+  SiNextdotjs,
+  SiExpress,
+} from "react-icons/si";
+import { LuDownload, LuExternalLink } from "react-icons/lu";
+
+const skill_icon_map: Record<string, React.ReactNode> = {
+  JavaScript: <SiJavascript className="text-yellow-400" />,
+  TypeScript: <SiTypescript className="text-blue-400" />,
+  Python: <FaPython className="text-blue-300" />,
+  React: <FaReact className="text-cyan-400" />,
+  "Next.js": <SiNextdotjs className="text-slate-200" />,
+  Angular: <FaAngular className="text-red-500" />,
+  "Node.js": <FaNodeJs className="text-green-500" />,
+  "Express.js": <SiExpress className="text-slate-300" />,
+  MongoDB: <SiMongodb className="text-green-400" />,
+  Redis: <SiRedis className="text-red-400" />,
+  "Socket.IO": <SiSocketdotio className="text-slate-200" />,
+  Git: <FaGitAlt className="text-orange-400" />,
+  PM2: <FaNodeJs className="text-green-400" />,
+};
 
 const experience = [
   {
@@ -95,7 +129,7 @@ const skills = [
   { title: "Databases", val: ["MongoDB", "Redis"] },
   {
     title: "Tools & Libraries",
-    val: ["Socket.IO", "Git", "PM2", "WebRTC", "ECharts"],
+    val: ["Socket.IO", "Git", "PM2"],
   },
 ];
 
@@ -106,16 +140,29 @@ const nav_items = [
   { label: "Projects", id: "projects" },
 ];
 
-export default function Home() {
-  const [activeNav, setActiveNav] = useState("about");
-  const cardRefs = useRef<HTMLDivElement[]>([]);
-  cardRefs.current = [];
+const social_links = [
+  { icon: <FaGithub />, href: "https://github.com/vickynot-10" },
+  {
+    icon: <FaLinkedin />,
+    href: "https://www.linkedin.com/in/vignesh-s-512245293/",
+  },
+  {
+    icon: <FaWhatsapp />,
+    href: "https://wa.me/916382409401?text=Hello%20There!",
+  },
+  { icon: <SiGmail />, href: "mailto:vigneshselvam504@gmail.com" },
+];
 
-  const addToRefs = (el: HTMLDivElement | null) => {
-    if (el && !cardRefs.current.includes(el)) cardRefs.current.push(el);
+export default function Home() {
+  const [active_nav, set_active_nav] = useState("about");
+  const card_refs = useRef<HTMLDivElement[]>([]);
+  card_refs.current = [];
+
+  const add_to_refs = (el: HTMLDivElement | null) => {
+    if (el && !card_refs.current.includes(el)) card_refs.current.push(el);
   };
 
-  function scrollToSection(id: string) {
+  function scroll_to_section(id: string) {
     document
       .getElementById(id)
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -128,17 +175,17 @@ export default function Home() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveNav(entry.target.id);
+          if (entry.isIntersecting) set_active_nav(entry.target.id);
         });
       },
-      { rootMargin: "0px", threshold: 0.5 },
+      { rootMargin: "0px", threshold: 0.4 },
     );
     sections.forEach((s) => observer.observe(s));
     return () => sections.forEach((s) => observer.unobserve(s));
   }, []);
 
   useEffect(() => {
-    const cards = cardRefs.current;
+    const cards = card_refs.current;
     const enter = (hovered: HTMLDivElement) => {
       cards.forEach((c) => {
         c !== hovered
@@ -162,35 +209,46 @@ export default function Home() {
 
   return (
     <div className="relative w-full min-h-screen">
-      <div className="w-full flex flex-row justify-between py-24 min-h-screen gap-8">
-        <div className="sticky top-24 w-[46%] self-start flex flex-col justify-between h-[calc(100vh-12rem)]">
+      <a
+        href="/Vignesh-Resume.pdf"
+        download="Vignesh-Resume.pdf"
+        className="fixed bottom-6 right-5 md:bottom-8 md:right-10 z-50 flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-teal-400/10 text-slate-200 text-lg md:text-xl border border-teal-400/20 hover:bg-teal-400/30 hover:border-teal-400/50 transition-all duration-300 backdrop-blur-md"
+        title="Download Resume"
+      >
+        <LuDownload />
+      </a>
+
+      <div className="w-full flex flex-col lg:flex-row lg:justify-between py-12 lg:py-24 min-h-screen gap-0 lg:gap-8">
+        <div className="lg:sticky lg:top-24 w-full lg:w-[46%] lg:self-start flex flex-col lg:justify-between lg:h-[calc(100vh-12rem)] mb-14 lg:mb-0">
           <div>
-            <h1 className="text-5xl font-bold text-slate-200 mb-2 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-200 mb-2 tracking-tight">
               Vignesh
             </h1>
-            <p className="text-xl font-semibold text-slate-200 mb-4">
+            <p className="text-lg md:text-xl font-semibold text-slate-200 mb-4">
               Software Engineer
             </p>
-            <p className="text-sm text-slate-400 leading-relaxed w-4/5">
-              I build production-grade full-stack applications — from REST APIs
-              and real-time systems to scalable multi-tenant architectures.
+            <p className="text-sm text-slate-400 leading-7 max-w-sm">
+              I build and ship full-stack web applications — REST APIs,
+              real-time Socket.IO systems, multi-tenant architectures, and
+              developer tooling. I care about clean code, fast backends, and UIs
+              that work well in production.
             </p>
           </div>
 
-          <nav className="flex flex-col  gap-3 my-8">
+          <nav className="hidden lg:flex flex-col gap-3 my-8">
             {nav_items.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => scroll_to_section(item.id)}
                 className={`group flex items-center gap-4 text-xs font-bold uppercase tracking-widest transition-all duration-200 text-left py-1 w-fit cursor-pointer bg-transparent border-none ${
-                  activeNav === item.id
+                  active_nav === item.id
                     ? "text-slate-200"
                     : "text-slate-500 hover:text-slate-200"
                 }`}
               >
                 <span
                   className={`block h-px transition-all duration-200 ${
-                    activeNav === item.id
+                    active_nav === item.id
                       ? "w-16 bg-slate-200"
                       : "w-8 bg-slate-500 group-hover:w-16 group-hover:bg-slate-200"
                   }`}
@@ -200,19 +258,8 @@ export default function Home() {
             ))}
           </nav>
 
-          <div className="flex flex-row items-center gap-5">
-            {[
-              { icon: <FaGithub />, href: "https://github.com/vickynot-10" },
-              {
-                icon: <FaLinkedin />,
-                href: "https://www.linkedin.com/in/vignesh-s-512245293/",
-              },
-              {
-                icon: <FaWhatsapp />,
-                href: "https://wa.me/916382409401?text=Hello%20There!",
-              },
-              { icon: <SiGmail />, href: "mailto:vigneshselvam504@gmail.com" },
-            ].map((s, i) => (
+          <div className="flex flex-row items-center gap-5 mt-8 lg:mt-0">
+            {social_links.map((s, i) => (
               <Link
                 key={i}
                 href={s.href}
@@ -225,41 +272,49 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-[50%] flex flex-col gap-0">
-          <section id="about" className="scroll-mt-24 pb-24">
-            <p className="text-slate-400 leading-relaxed mb-5">
-              I&apos;m a developer based in Madurai, Tamil Nadu, passionate
-              about crafting accessible, pixel-perfect user interfaces that
-              blend thoughtful design with robust engineering. My favorite work
-              lies at the intersection of design and development — creating
-              experiences that not only look great but are meticulously built
-              for performance and usability.
+        <div className="w-full lg:w-[50%] flex flex-col">
+          <section id="about" className="scroll-mt-24 pb-16 lg:pb-24">
+            <h2 className="lg:hidden text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
+              About
+            </h2>
+            <p className="text-slate-400 leading-8 mb-5 text-sm md:text-base">
+              I&apos;m a developer based in Madurai, Tamil Nadu. I spend most of
+              my time building full-stack web apps, designing backend systems,
+              and solving real engineering problems. I care about code
+              that&apos;s clean, performant, and maintainable in production.
             </p>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-slate-400 leading-8 text-sm md:text-base">
               Currently a Software Engineer at{" "}
               <span className="text-slate-200 font-medium">
                 AAPGS Private Limited
               </span>
-              , working across full-stack web applications — from Angular and
-              Next.js frontends to Node.js APIs and MongoDB backend systems.
+              , where I&apos;ve built IoT dashboards, multi-tenant platforms,
+              real-time data pipelines, and internal tooling — using React,
+              Angular, Next.js, Node.js, and MongoDB.
             </p>
           </section>
 
-          <section id="skills" className="scroll-mt-24 pb-24">
-            <div className="grid grid-cols-2 gap-3">
+          <section id="skills" className="scroll-mt-24 pb-16 lg:pb-24">
+            <h2 className="lg:hidden text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
+              Skills
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {skills.map((item, i) => (
                 <div
                   key={i}
-                  className="p-4 rounded-lg bg-teal-400/10 border border-teal-400/10 hover:border-teal-400/25 transition-all duration-300"
+                  className="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:border-teal-400/30 hover:bg-slate-800/80 transition-all duration-300"
                 >
-                  <p className="text-teal-300 text-sm font-semibold mb-3 capitalize">
+                  <p className="text-teal-300 text-xs font-bold uppercase tracking-widest mb-4">
                     {item.title}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {item.val.map((v, j) => (
-                      <span key={j} className="text-slate-400 text-sm">
-                        {v}
-                      </span>
+                      <div key={j} className="flex items-center gap-1.5">
+                        {skill_icon_map[v] && (
+                          <span className="text-base">{skill_icon_map[v]}</span>
+                        )}
+                        <span className="text-slate-300 text-sm">{v}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -269,29 +324,34 @@ export default function Home() {
 
           <section
             id="experience"
-            className="scroll-mt-16 pb-24 flex flex-col gap-4"
+            className="scroll-mt-16 pb-16 lg:pb-24 flex flex-col gap-3"
           >
+            <h2 className="lg:hidden text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">
+              Experience
+            </h2>
             {experience.map((item, i) => (
               <div
                 key={i}
-                ref={addToRefs}
-                className="experience-card group relative grid grid-cols-9 gap-4 p-4 rounded-lg transition-all duration-300 hover:bg-slate-800/50 cursor-default border border-transparent hover:border-slate-700/50"
+                ref={add_to_refs}
+                className="group relative flex flex-col sm:grid sm:grid-cols-9 gap-2 sm:gap-4 p-4 rounded-xl transition-all duration-300 hover:bg-slate-800/50 cursor-default border border-transparent hover:border-slate-700/50"
               >
-                <div className="col-span-3">
-                  <p className="text-slate-500 text-xs font-medium leading-relaxed mt-1">
+                <div className="sm:col-span-3">
+                  <p className="text-slate-500 text-xs font-medium leading-relaxed">
                     {item.year}
                   </p>
                 </div>
-                <div className="col-span-6">
-                  <p className="text-slate-200 font-semibold text-sm mb-1">
-                    {item.role} ·{" "}
-                    <span className="text-slate-300">{item.company}</span>
+                <div className="sm:col-span-6">
+                  <p className="text-slate-200 font-semibold text-sm mb-3 leading-relaxed">
+                    {item.role}{" "}
+                    <span className="text-slate-400 font-normal">
+                      · {item.company}
+                    </span>
                   </p>
-                  <ul className="space-y-1 mb-4 max-h-48 overflow-y-auto pr-1 scrollbar-thin">
+                  <ul className="space-y-2 mb-4 max-h-48 overflow-y-auto pr-1 scrollbar-thin">
                     {item.description.map((d, j) => (
                       <li
                         key={j}
-                        className="text-slate-400 text-sm leading-relaxed list-disc ml-4"
+                        className="text-slate-400 text-sm leading-7 list-disc ml-4"
                       >
                         {d}
                       </li>
@@ -301,7 +361,7 @@ export default function Home() {
                     {item.skills.map((s, j) => (
                       <span
                         key={j}
-                        className="text-teal-300 text-xs font-medium bg-teal-400/10 px-3 py-1 rounded-full"
+                        className="text-teal-300 text-xs font-medium bg-teal-400/10 px-3 py-1 rounded-full border border-teal-400/10"
                       >
                         {s}
                       </span>
@@ -314,21 +374,24 @@ export default function Home() {
 
           <section
             id="projects"
-            className="scroll-mt-24  flex flex-col gap-4"
+            className="scroll-mt-24 flex flex-col gap-3 pb-16 lg:pb-24"
           >
+            <h2 className="lg:hidden text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">
+              Projects
+            </h2>
             {projects.map((item, i) => (
               <div
                 key={i}
-                ref={addToRefs}
-                className="group relative grid grid-cols-9 gap-4 p-4 rounded-lg transition-all duration-300 hover:bg-slate-800/50 cursor-default border border-transparent hover:border-slate-700/50"
+                ref={add_to_refs}
+                className="group relative flex flex-col sm:grid sm:grid-cols-9 gap-2 sm:gap-4 p-4 rounded-xl transition-all duration-300 hover:bg-slate-800/50 cursor-default border border-transparent hover:border-slate-700/50"
               >
-                <div className="col-span-3">
-                  <p className="text-slate-500 text-xs font-medium leading-relaxed mt-1">
+                <div className="sm:col-span-3">
+                  <p className="text-slate-500 text-xs font-medium leading-relaxed">
                     {item.company}
                   </p>
                 </div>
-                <div className="col-span-6">
-                  <div className="flex items-center gap-2 mb-1">
+                <div className="sm:col-span-6">
+                  <div className="flex items-center gap-2 mb-3">
                     <p className="text-slate-200 font-semibold text-sm">
                       {item.name}
                     </p>
@@ -342,11 +405,11 @@ export default function Home() {
                       </Link>
                     )}
                   </div>
-                  <ul className="space-y-1 mb-4 max-h-48 overflow-y-auto pr-1">
+                  <ul className="space-y-2 mb-4 max-h-48 overflow-y-auto pr-1 scrollbar-thin">
                     {item.desc.map((d, j) => (
                       <li
                         key={j}
-                        className="text-slate-400 text-sm leading-relaxed list-disc ml-4"
+                        className="text-slate-400 text-sm leading-7 list-disc ml-4"
                       >
                         {d}
                       </li>
@@ -356,7 +419,7 @@ export default function Home() {
                     {item.stack.map((s, j) => (
                       <span
                         key={j}
-                        className="text-teal-300 text-xs font-medium bg-teal-400/10 px-3 py-1 rounded-full"
+                        className="text-teal-300 text-xs font-medium bg-teal-400/10 px-3 py-1 rounded-full border border-teal-400/10"
                       >
                         {s}
                       </span>
