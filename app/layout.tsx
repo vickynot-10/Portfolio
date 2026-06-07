@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 import AppWrapper from "@/components/AppWrapper";
 
@@ -27,6 +27,7 @@ export default function RootLayout({
       className={`${poppins.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        <Analytics  />
         <AppWrapper children={children} />
       </body>
     </html>

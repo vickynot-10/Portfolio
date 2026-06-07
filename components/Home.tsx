@@ -209,25 +209,18 @@ export default function Home() {
 
   return (
     <div className="relative w-full min-h-screen">
-      <a
-        href="/Vignesh-Resume.pdf"
-        download="Vignesh-Resume.pdf"
-        className="fixed bottom-6 right-5 md:bottom-8 md:right-10 z-50 flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-teal-400/10 text-slate-200 text-lg md:text-xl border border-teal-400/20 hover:bg-teal-400/30 hover:border-teal-400/50 transition-all duration-300 backdrop-blur-md"
-        title="Download Resume"
-      >
-        <LuDownload />
-      </a>
+      
 
       <div className="w-full flex flex-col lg:flex-row lg:justify-between py-12 lg:py-24 min-h-screen gap-0 lg:gap-8">
         <div className="lg:sticky lg:top-24 w-full lg:w-[46%] lg:self-start flex flex-col lg:justify-between lg:h-[calc(100vh-12rem)] mb-14 lg:mb-0">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-200 mb-2 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-200 mb-4 tracking-tight">
               Vignesh
             </h1>
             <p className="text-lg md:text-xl font-semibold text-slate-200 mb-4">
               Software Engineer
             </p>
-            <p className="text-sm text-slate-400 leading-7 max-w-sm">
+            <p className="text-sm text-slate-400 leading-7 ">
               I build and ship full-stack web applications — REST APIs,
               real-time Socket.IO systems, multi-tenant architectures, and
               developer tooling. I care about clean code, fast backends, and UIs
