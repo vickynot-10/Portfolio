@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import AppWrapper from "@/components/AppWrapper";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -71,6 +71,7 @@ export default function RootLayout({
     >
       <body className="min-h-full">
         <Analytics />
+        <SpeedInsights />
         <AppWrapper children={children} />
       </body>
     </html>
