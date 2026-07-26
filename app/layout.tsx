@@ -16,21 +16,11 @@ export const metadata: Metadata = {
   title: "Vignesh | Software Engineer",
   description:
     "Full-stack developer specializing in React, Node.js, and real-time systems.",
-  keywords: [
-    "Vignesh",
-    "Software Engineer",
-    "Full Stack Developer",
-    "React",
-    "Next.js",
-    "Node.js",
-    "TypeScript",
-    "MongoDB",
-    "Socket.IO",
-    "Tamil Nadu",
-    "Madurai",
-  ],
   authors: [{ name: "Vignesh", url: "https://github.com/vickynot-10" }],
   creator: "Vignesh",
+  alternates: {
+    canonical: "https://vickynot.vercel.app",
+  },
   icons: {
     icon: [
       {
@@ -64,6 +54,36 @@ export const metadata: Metadata = {
   },
 };
 
+const person_json_ld = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Vignesh",
+  jobTitle: "Software Engineer",
+  url: "https://vickynot.vercel.app",
+  sameAs: [
+    "https://github.com/vickynot-10",
+    "https://www.linkedin.com/in/vignesh-s-512245293/",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Madurai",
+    addressRegion: "Tamil Nadu",
+    addressCountry: "IN",
+  },
+  knowsAbout: [
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "C",
+    "C++",
+    "React",
+    "Next.js",
+    "Node.js",
+    "MongoDB",
+    "Socket.IO",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -74,6 +94,12 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${poppins.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(person_json_ld) }}
+        />
+      </head>
       <body className="min-h-full">
         <Analytics />
         <SpeedInsights />
