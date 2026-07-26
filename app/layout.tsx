@@ -10,7 +10,9 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
 });
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vickynot.vercel.app"),
   title: "Vignesh | Software Engineer",
   description:
     "Full-stack developer specializing in React, Node.js, and real-time systems.",
@@ -56,6 +58,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: "x1thV2rivNQSFGq_tTfFORz2HTx9BT2BpeU1xtAb_yw",
   },
 };
 
