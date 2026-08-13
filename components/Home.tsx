@@ -121,7 +121,7 @@ const skills = [
     val: ["React", "Next.js", "Angular", "Node.js", "Express.js"],
   },
   { title: "Databases", val: ["MongoDB", "Redis"] },
-  { title: "Tools & Libraries", val: ["Socket.IO", "PayU", "Git", "PM2"] },
+  { title: "Tools & Libraries", val: ["Socket.IO", "Git", "PM2"] },
 ];
 const nav_items = [
   { label: "About", id: "about" },
