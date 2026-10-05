@@ -336,13 +336,9 @@ export default function HomeClient({
               viewport={{ once: true }}
               className="text-slate-400 leading-8 text-sm md:text-base"
             >
-              Currently a Software Engineer at{" "}
-              <span className="text-slate-200 font-medium">
-                AAPGS Private Limited
-              </span>
-              , where I&apos;ve built IoT dashboards, multi-tenant platforms,
-              real-time data pipelines, and internal tooling — using React,
-              Angular, Next.js, Node.js, and MongoDB.
+              I build IoT dashboards, multi-tenant platforms, real-time data
+              pipelines, and internal tooling with React, Angular, Next.js,
+              Node.js, and MongoDB.
             </motion.p>
           </section>
 
